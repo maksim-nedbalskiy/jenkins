@@ -1,20 +1,19 @@
 pipeline { 
     agent any 
  stages { 
-  stage('Docker Build and Tag') { 
+  stage('Docker Build') { 
            steps { 
  
-                sh 'docker build -t nginx:myimage .' 
-                sh 'docker tag nginx hardvik1/hw7:myimage' 
+                sh 'docker build -t maksimnedbalskiy/jenkins .'  
  
           } 
         } 
  
-  stage('Publish image to Docker Hub') { 
+  stage('Docker Publish') { 
  
             steps { 
         withDockerRegistry([ credentialsId: "DockerHub", url: "" ]) { 
-          sh  'docker push hardvik1/hw7:myimage' 
+          sh  'docker push maksimnedbalskiy/jenkins' 
         } 
  
           } 
