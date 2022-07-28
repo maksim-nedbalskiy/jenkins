@@ -12,11 +12,7 @@ pipeline {
 
 
  stage('Build Java') { 
-           steps { 
- 
                 sh 'mvn clean package'  
- 
-          } 
         }
 
  
