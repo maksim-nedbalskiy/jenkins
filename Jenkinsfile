@@ -12,7 +12,7 @@ pipeline {
   stage('Docker Publish') { 
  
             steps { 
-        withDockerRegistry([ credentialsId: "DockerHubPwd", url: "https://hub.docker.com/repository/docker/maksimnedbalskiy/jenkins" ]) { 
+        withDockerRegistry([ credentialsId: "DockerHubPwd", url: "https://hub.docker.com/repository/docker/maksimnedbalskiy" ]) { 
           sh  'docker push maksimnedbalskiy/jenkins' 
         } 
  
