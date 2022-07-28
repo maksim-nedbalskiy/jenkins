@@ -12,8 +12,10 @@ pipeline {
 
 
  stage('Build Java') {
-    sh 'mvn clean package'
+    steps {
+	sh 'mvn clean package'
         }
+	}
 
  
   stage('Docker Publish') { 
