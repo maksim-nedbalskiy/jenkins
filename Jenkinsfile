@@ -15,6 +15,7 @@ pipeline {
  
             steps { 
         withDockerRegistry([ credentialsId: "DockerHubPwd", url: "https://hub.docker.com/repository/docker" ]) { 
+	  sh 'docker login'
           sh  'docker push maksimnedbalskiy/jenkins' 
         } 
  
